@@ -12,7 +12,7 @@
 #
 
 PORTNAME=	wordpress-plugins
-PORTVERSION=	20111007
+PORTVERSION=	20120222
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.wordpress.org/plugin/
 DIST_SUBDIR=	wordpress
@@ -57,7 +57,7 @@ DISTFILES+=	sem-autolink-uri.zip
 .endif
 
 .if defined(WITH_BROKENLINK_CHECKER)
-DISTFILES+=	broken-link-checker.1.3.1.zip
+DISTFILES+=	broken-link-checker.1.4.zip
 .endif
 
 .if defined(WITH_ENHANCED_META)
@@ -73,7 +73,7 @@ DISTFILES+=	syntaxhighlighter.zip
 .endif
 
 .if defined(WITH_WPTOUCH)
-DISTFILES+=	wptouch.1.9.34.zip
+DISTFILES+=	wptouch.1.9.39.zip
 .endif
 
 .if defined(WITH_STATS)
@@ -81,7 +81,7 @@ DISTFILES+=	stats.zip
 .endif
 
 .if defined(WITH_SUPER_CACHE)
-DISTFILES+=	wp-super-cache.0.9.9.9.zip
+DISTFILES+=	wp-super-cache.1.0.zip
 .endif
 
 .if defined(WITH_TWEET_BUTTON)
@@ -89,11 +89,11 @@ DISTFILES+=	wp-tweet-button.zip
 .endif
 
 .if defined(WITH_ALL_IN_ONE_SEO_PACK)
-DISTFILES+=	all-in-one-seo-pack.zip
+DISTFILES+=	all-in-one-seo-pack.1.6.13.8.zip
 .endif
 
 .if defined(WITH_CONTACT_FORM_7)
-DISTFILES+=	contact-form-7.3.0.zip
+DISTFILES+=	contact-form-7.3.1.zip
 .endif
 
 .if defined(WITH_GOOGLE_ANALYTICATOR)

@@ -12,7 +12,7 @@
 #
 
 PORTNAME=	wordpress-plugins
-PORTVERSION=	20120222
+PORTVERSION=	20120604
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.wordpress.org/plugin/
 DIST_SUBDIR=	wordpress
@@ -27,14 +27,17 @@ OPTIONS=	AKISMET "Enable Akismet plugin" on \
 		AUTOLINK_URI "Enable Autolink URI plugin" on \
 		BROKENLINK_CHECKER "Enable Broken Link Checker plugin" on \
 		ENHANCED_META "Enable Enhanced meta plugin" on \
-		LIGHTBOX_2 "Enable Lightbox 2 plugin" on \
+		LIGHTBOX_PLUS "Enable Lightbox Plus plugin" on \
 		SYNTAXHIGHLIGHT "Enable SyntaxHighlighter Envolved plugin" on \
 		STATS "Enable WordPress.com Stats plugin" on \
 		SUPER_CACHE "Enable WP Super Cache plugin" on \
 		TWEET_BUTTON "Enable WP Tweet Button plugin" on \
 		ALL_IN_ONE_SEO_PACK "Enable All in One SEO Pack plugin" on \
 		CONTACT_FORM_7 "Enable Contact form 7 plugin" on \
-		GOOGLE_ANALYTICATOR "Enable Google Analyticator plugin" on
+		GOOGLE_ANALYTICATOR "Enable Google Analyticator plugin" on \
+		FOOTNOTES "Enable Footnotes for WordPress plugin" on \
+		TOC "Enable TOC for WordPress plugin" on \
+		WP_SOCIAL_LOGIN "Enable Socal Login plugin" on
 
 NO_BUILD?=	yes
 WRKSRC?=	${WRKDIR}
@@ -45,7 +48,7 @@ PLIST=		${WRKDIR}/plist
 WORDPRESS?=	www/wordpress
 
 .if defined(WITH_AKISMET)
-DISTFILES+=	akismet.2.4.0.zip
+DISTFILES+=	akismet.2.5.6.zip
 .endif
 
 .if defined(WITH_AJAX_PLUGIN_HELPER)
@@ -57,15 +60,15 @@ DISTFILES+=	sem-autolink-uri.zip
 .endif
 
 .if defined(WITH_BROKENLINK_CHECKER)
-DISTFILES+=	broken-link-checker.1.4.zip
+DISTFILES+=	broken-link-checker.1.5.4.zip
 .endif
 
 .if defined(WITH_ENHANCED_META)
 DISTFILES+=	enhanced-meta-widget.3.0.0.zip
 .endif
 
-.if defined(WITH_LIGHTBOX_2)
-DISTFILES+=	lightbox-2.2.9.2.zip
+.if defined(WITH_LIGHTBOX_PLUS)
+DISTFILES+=	lightbox-plus.2.4.6.zip
 .endif
 
 .if defined(WITH_SYNTAXHIGHLIGHT)
@@ -73,7 +76,7 @@ DISTFILES+=	syntaxhighlighter.zip
 .endif
 
 .if defined(WITH_WPTOUCH)
-DISTFILES+=	wptouch.1.9.39.zip
+DISTFILES+=	wptouch.1.9.40.zip
 .endif
 
 .if defined(WITH_STATS)
@@ -81,7 +84,7 @@ DISTFILES+=	stats.zip
 .endif
 
 .if defined(WITH_SUPER_CACHE)
-DISTFILES+=	wp-super-cache.1.0.zip
+DISTFILES+=	wp-super-cache.1.1.zip
 .endif
 
 .if defined(WITH_TWEET_BUTTON)
@@ -89,15 +92,27 @@ DISTFILES+=	wp-tweet-button.zip
 .endif
 
 .if defined(WITH_ALL_IN_ONE_SEO_PACK)
-DISTFILES+=	all-in-one-seo-pack.1.6.13.8.zip
+DISTFILES+=	all-in-one-seo-pack.1.6.14.3.zip
 .endif
 
 .if defined(WITH_CONTACT_FORM_7)
-DISTFILES+=	contact-form-7.3.1.zip
+DISTFILES+=	contact-form-7.3.1.2.zip
 .endif
 
 .if defined(WITH_GOOGLE_ANALYTICATOR)
 DISTFILES+=	google-analyticator.6.2.zip
+.endif
+
+.if defined(WITH_FOOTNOTES)
+DISTFILES+=	footnotes-for-wordpress.2010.0822.zip
+.endif
+
+.if defined(WITH_TOC)
+DISTFILES+=	toc-for-wordpress.zip
+.endif
+
+.if defined(WITH_WP_SOCIAL_LOGIN)
+DISTFILES+=	wordpress-social-login.zip
 .endif
 
 WORDPRESS_PLUGINS?=	${WORDPRESS}/wp-content/plugins

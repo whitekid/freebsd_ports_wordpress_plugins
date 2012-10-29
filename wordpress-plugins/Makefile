@@ -36,8 +36,10 @@ OPTIONS=	AKISMET "Enable Akismet plugin" on \
 		CONTACT_FORM_7 "Enable Contact form 7 plugin" on \
 		GOOGLE_ANALYTICATOR "Enable Google Analyticator plugin" on \
 		FOOTNOTES "Enable Footnotes for WordPress plugin" on \
+		WPTOUCH "Enable WPTouch for WordPress plugin" on \
 		TOC "Enable TOC for WordPress plugin" on \
-		WP_SOCIAL_LOGIN "Enable Socal Login plugin" on
+		DISQUS "Enable Disqus Comment System plugin" on \
+		LAZY_SOCIAL_BUTTON "Enable Lazy Social Buttons" on
 
 NO_BUILD?=	yes
 WRKSRC?=	${WRKDIR}
@@ -60,7 +62,7 @@ DISTFILES+=	sem-autolink-uri.zip
 .endif
 
 .if defined(WITH_BROKENLINK_CHECKER)
-DISTFILES+=	broken-link-checker.1.5.4.zip
+DISTFILES+=	broken-link-checker.1.6.2.zip
 .endif
 
 .if defined(WITH_ENHANCED_META)
@@ -76,7 +78,7 @@ DISTFILES+=	syntaxhighlighter.zip
 .endif
 
 .if defined(WITH_WPTOUCH)
-DISTFILES+=	wptouch.1.9.40.zip
+DISTFILES+=	wptouch.1.9.41.zip
 .endif
 
 .if defined(WITH_STATS)
@@ -84,7 +86,7 @@ DISTFILES+=	stats.zip
 .endif
 
 .if defined(WITH_SUPER_CACHE)
-DISTFILES+=	wp-super-cache.1.1.zip
+DISTFILES+=	wp-super-cache.1.2.zip
 .endif
 
 .if defined(WITH_TWEET_BUTTON)
@@ -92,15 +94,15 @@ DISTFILES+=	wp-tweet-button.zip
 .endif
 
 .if defined(WITH_ALL_IN_ONE_SEO_PACK)
-DISTFILES+=	all-in-one-seo-pack.1.6.14.3.zip
+DISTFILES+=	all-in-one-seo-pack.1.6.15.2.zip
 .endif
 
 .if defined(WITH_CONTACT_FORM_7)
-DISTFILES+=	contact-form-7.3.1.2.zip
+DISTFILES+=	contact-form-7.3.3.1.zip
 .endif
 
 .if defined(WITH_GOOGLE_ANALYTICATOR)
-DISTFILES+=	google-analyticator.6.2.zip
+DISTFILES+=	google-analyticator.zip
 .endif
 
 .if defined(WITH_FOOTNOTES)
@@ -111,10 +113,14 @@ DISTFILES+=	footnotes-for-wordpress.2010.0822.zip
 DISTFILES+=	toc-for-wordpress.zip
 .endif
 
-.if defined(WITH_WP_SOCIAL_LOGIN)
-DISTFILES+=	wordpress-social-login.zip
+.if defined(WITH_DISQUS)
+DISTFILES+=	disqus-comment-system.2.73.zip
 .endif
 
+.if defined(WITH_DISQUS)
+DISTFILES+=	lazy-social-buttons.1.0.7.zip
+.endif
+       
 WORDPRESS_PLUGINS?=	${WORDPRESS}/wp-content/plugins
 PLUGINS_DIRS=	${DISTFILES:C|\.[\.0-9]*zip||}
 

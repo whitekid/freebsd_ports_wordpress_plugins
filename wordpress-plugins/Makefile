@@ -12,7 +12,7 @@
 #
 
 PORTNAME=	wordpress-plugins
-PORTVERSION=	20120604
+PORTVERSION=	20130820
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.wordpress.org/plugin/
 DIST_SUBDIR=	wordpress
@@ -22,103 +22,129 @@ COMMENT=	Wordpress plugin collection
 
 RUN_DEPENDS=	wordpress>=0:${PORTSDIR}/www/wordpress
 
-OPTIONS=	AKISMET "Enable Akismet plugin" on \
-		AJAX_PLUGIN_HELPER "Enable Ajax Plugin Helper plugin" on \
-		AUTOLINK_URI "Enable Autolink URI plugin" on \
-		BROKENLINK_CHECKER "Enable Broken Link Checker plugin" on \
-		ENHANCED_META "Enable Enhanced meta plugin" on \
-		LIGHTBOX_PLUS "Enable Lightbox Plus plugin" on \
-		SYNTAXHIGHLIGHT "Enable SyntaxHighlighter Envolved plugin" on \
-		STATS "Enable WordPress.com Stats plugin" on \
-		SUPER_CACHE "Enable WP Super Cache plugin" on \
-		TWEET_BUTTON "Enable WP Tweet Button plugin" on \
-		ALL_IN_ONE_SEO_PACK "Enable All in One SEO Pack plugin" on \
-		CONTACT_FORM_7 "Enable Contact form 7 plugin" on \
-		GOOGLE_ANALYTICATOR "Enable Google Analyticator plugin" on \
-		FOOTNOTES "Enable Footnotes for WordPress plugin" on \
-		WPTOUCH "Enable WPTouch for WordPress plugin" on \
-		TOC "Enable TOC for WordPress plugin" on \
-		DISQUS "Enable Disqus Comment System plugin" on \
-		LAZY_SOCIAL_BUTTON "Enable Lazy Social Buttons" on
+OPTIONS_DEFINE=	AKISMET \
+		AJAX_PLUGIN_HELPER \
+		AUTOLINK_URI \
+		BROKENLINK_CHECKER \
+		ENHANCED_META \
+		LIGHTBOX_PLUS \
+		SYNTAXHIGHLIGHT \
+		STATS \
+		SUPER_CACHE \
+		TWEET_BUTTON \
+		ALL_IN_ONE_SEO_PACK \
+		CONTACT_FORM_7 \
+		GOOGLE_ANALYTICATOR \
+		FOOTNOTES \
+		WPTOUCH \
+		TOC \
+		DISQUS \
+		LAZY_SOCIAL_BUTTON \
+		BRUTE_PROTECT
+
+AKISMET_DESC		= Enable Akismet plugin
+AJAX_PLUGIN_HELPER_DESC	= Enable Ajax Plugin Helper plugin
+AUTOLINK_URI_DESC	= Enable Autolink URI plugin
+BROKENLINK_CHECKER_DESC	= Enable Broken Link Checker plugin
+ENHANCED_META_DESC	= Enable Enhanced meta plugin
+LIGHTBOX_PLUS_DESC	= Enable Lightbox Plus plugin
+SYNTAXHIGHLIGHT_DESC	= Enable SyntaxHighlighter Envolved plugin
+STATS_DESC		= Enable WordPress.com Stats plugin
+SUPER_CACHE_DESC	= Enable WP Super Cache plugin
+TWEET_BUTTON_DESC	= Enable WP Tweet Button plugin
+ALL_IN_ONE_SEO_PACK_DESC= Enable All in One SEO Pack plugin
+CONTACT_FORM_7_DESC	= Enable Contact form 7 plugin
+GOOGLE_ANALYTICATOR_DESC= Enable Google Analyticator plugin
+FOOTNOTES_DESC		= Enable Footnotes for WordPress plugin
+WPTOUCH_DESC		= Enable WPTouch for WordPress plugin
+TOC_DESC		= Enable TOC for WordPress plugin
+DISQUS_DESC		= Enable Disqus Comment System plugin
+LAZY_SOCIAL_BUTTON_DESC	= Enable Lazy Social Buttons
+BRUTE_PROTECT_DESC	= Enable BruteProtect
 
 NO_BUILD?=	yes
 WRKSRC?=	${WRKDIR}
 PLIST=		${WRKDIR}/plist
 
-.include <bsd.port.pre.mk>
+#.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 WORDPRESS?=	www/wordpress
 
-.if defined(WITH_AKISMET)
-DISTFILES+=	akismet.2.5.6.zip
+.if ${PORT_OPTIONS:MAKISMET}
+DISTFILES+=	akismet.2.5.9.zip
 .endif
 
-.if defined(WITH_AJAX_PLUGIN_HELPER)
+.if ${PORT_OPTIONS:MAJAX_PLUGIN_HELPER}
 DISTFILES+=	ajax-plugin-helper.1.0.5.zip
 .endif
 
-.if defined(WITH_AUTOLINK_URI)
+.if ${PORT_OPTIONS:MAUTO_LINK_URI}
 DISTFILES+=	sem-autolink-uri.zip
 .endif
 
-.if defined(WITH_BROKENLINK_CHECKER)
-DISTFILES+=	broken-link-checker.1.6.2.zip
+.if ${PORT_OPTIONS:MBROKENLINK_CHECKER}
+DISTFILES+=	broken-link-checker.1.8.3.zip
 .endif
 
-.if defined(WITH_ENHANCED_META)
+.if ${PORT_OPTIONS:MENHANCED_META}
 DISTFILES+=	enhanced-meta-widget.3.0.0.zip
 .endif
 
-.if defined(WITH_LIGHTBOX_PLUS)
-DISTFILES+=	lightbox-plus.2.4.6.zip
+.if ${PORT_OPTIONS:MLIGHTBOX_PLUS}
+DISTFILES+=	lightbox-plus.2.6.zip
 .endif
 
-.if defined(WITH_SYNTAXHIGHLIGHT)
+.if ${PORT_OPTIONS:MSYNTAXHIGHLIGHT}
 DISTFILES+=	syntaxhighlighter.zip
 .endif
 
-.if defined(WITH_WPTOUCH)
+.if ${PORT_OPTIONS:MWPTOUCH}
 DISTFILES+=	wptouch.1.9.41.zip
 .endif
 
-.if defined(WITH_STATS)
+.if ${PORT_OPTIONS:MSTATS}
 DISTFILES+=	stats.zip
 .endif
 
-.if defined(WITH_SUPER_CACHE)
-DISTFILES+=	wp-super-cache.1.2.zip
+.if ${PORT_OPTIONS:MSUPER_CACHE}
+DISTFILES+=	wp-super-cache.1.3.2.zip
 .endif
 
-.if defined(WITH_TWEET_BUTTON)
+.if ${PORT_OPTIONS:MTWEET_BUTTON}
 DISTFILES+=	wp-tweet-button.zip
 .endif
 
-.if defined(WITH_ALL_IN_ONE_SEO_PACK)
-DISTFILES+=	all-in-one-seo-pack.1.6.15.2.zip
+.if ${PORT_OPTIONS:MALL_IN_ONE_SEO_PACK}
+DISTFILES+=	all-in-one-seo-pack.2.0.3.zip
 .endif
 
-.if defined(WITH_CONTACT_FORM_7)
-DISTFILES+=	contact-form-7.3.3.1.zip
+.if ${PORT_OPTIONS:MCONTACT_FORM_7}
+DISTFILES+=	contact-form-7.3.5.2.zip
 .endif
 
-.if defined(WITH_GOOGLE_ANALYTICATOR)
+.if ${PORT_OPTIONS:MGOOGLE_ANALYTICATOR}
 DISTFILES+=	google-analyticator.zip
 .endif
 
-.if defined(WITH_FOOTNOTES)
+.if ${PORT_OPTIONS:MFOOTNOTES}
 DISTFILES+=	footnotes-for-wordpress.2010.0822.zip
 .endif
 
-.if defined(WITH_TOC)
+.if ${PORT_OPTIONS:MTOC}
 DISTFILES+=	toc-for-wordpress.zip
 .endif
 
-.if defined(WITH_DISQUS)
-DISTFILES+=	disqus-comment-system.2.73.zip
+.if ${PORT_OPTIONS:MDISQUS}
+DISTFILES+=	disqus-comment-system.2.74.zip
 .endif
 
-.if defined(WITH_DISQUS)
+.if ${PORT_OPTIONS:MLAZY_SOCIAL_BUTTON}
 DISTFILES+=	lazy-social-buttons.1.0.7.zip
+.endif
+       
+.if ${PORT_OPTIONS:MBRUTE_PROTECT}
+DISTFILES+=	bruteprotect.zip
 .endif
        
 WORDPRESS_PLUGINS?=	${WORDPRESS}/wp-content/plugins
@@ -141,4 +167,5 @@ do-install:
 	${FIND} ${f} -type f -exec ${CP} {} ${PREFIX}/${WORDPRESS_PLUGINS}/{} \;
 .endfor
 
-.include <bsd.port.post.mk>
+#.include <bsd.port.post.mk>
+.include <bsd.port.mk>

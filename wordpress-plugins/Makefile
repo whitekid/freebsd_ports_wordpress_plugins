@@ -37,6 +37,7 @@ OPTIONS_DEFINE=	\
 		SUPER_CACHE \
 		SYNTAXHIGHLIGHT \
 		TOC \
+		WORDFENCE \
 		WPTOUCH
 
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
@@ -59,7 +60,7 @@ STATS_DESC		= Enable WordPress.com Stats plugin
 SUPER_CACHE_DESC	= Enable WP Super Cache plugin
 SYNTAXHIGHLIGHT_DESC	= Enable SyntaxHighlighter Envolved plugin
 TOC_DESC		= Enable TOC plugin
-TWEET_BUTTON_DESC	= Enable WP Tweet Button plugin
+WORDFENCE_DESC		= Enable Wordfence plugin
 WPTOUCH_DESC		= Enable WPTouch plugin
 
 NO_BUILD?=	yes
@@ -138,6 +139,10 @@ DISTFILES+=	syntaxhighlighter.zip
 
 .if ${PORT_OPTIONS:MTOC}
 DISTFILES+=	toc-for-wordpress.zip
+.endif
+
+.if ${PORT_OPTIONS:MWORDFENCE}
+DISTFILES+=	wordfence.6.0.24.zip
 .endif
 
 .if ${PORT_OPTIONS:MWPTOUCH}

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress-plugins
-PORTVERSION=	20160303
+PORTVERSION=	20160316
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.wordpress.org/plugin/
 DIST_SUBDIR=	wordpress
@@ -110,7 +110,7 @@ DISTFILES+=	footnotes-for-wordpress.2010.0822.zip
 .endif
 
 .if ${PORT_OPTIONS:MGOOGLE_ANALYTICATOR}
-DISTFILES+=	google-analyticator.zip
+DISTFILES+=	google-analyticator.6.4.9.7.zip
 .endif
 
 .if ${PORT_OPTIONS:MLAZY_SOCIAL_BUTTON}

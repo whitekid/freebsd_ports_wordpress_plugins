@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress-plugins
-PORTVERSION=	20160330
+PORTVERSION=	20160405
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.wordpress.org/plugin/
 DIST_SUBDIR=	wordpress
@@ -21,9 +21,9 @@ PLIST=		${WRKDIR}/pkg-plist
 DISTFILES= \
 	advertising-manager.3.5.3.zip \
 	ajax-plugin-helper.1.0.5.zip \
-	all-in-one-seo-pack.2.3.2.3.zip \
+	all-in-one-seo-pack.2.3.3.2.zip \
 	bainternet-simple-toc.0.8.1.zip \
-	broken-link-checker.1.10.11.zip \
+	broken-link-checker.1.11.2.zip \
 	bruteprotect.zip \
 	contact-form-7.4.4.1.zip \
 	disable-comments.zip \

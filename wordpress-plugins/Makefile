@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress-plugins
-PORTVERSION=	20160405
+PORTVERSION=	20160513
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.wordpress.org/plugin/
 DIST_SUBDIR=	wordpress
@@ -21,11 +21,11 @@ PLIST=		${WRKDIR}/pkg-plist
 DISTFILES= \
 	advertising-manager.3.5.3.zip \
 	ajax-plugin-helper.1.0.5.zip \
-	all-in-one-seo-pack.2.3.3.2.zip \
+	all-in-one-seo-pack.2.3.4.2.zip \
 	bainternet-simple-toc.0.8.1.zip \
 	broken-link-checker.1.11.2.zip \
 	bruteprotect.zip \
-	contact-form-7.4.4.1.zip \
+	contact-form-7.4.4.2.zip \
 	disable-comments.zip \
 	disqus-comment-system.zip \
 	enhanced-meta-widget.3.0.0.zip \
@@ -37,9 +37,9 @@ DISTFILES= \
 	stats.zip \
 	syntaxhighlighter.zip \
 	toc-for-wordpress.zip \
-	wordfence.6.0.25.zip \
+	wordfence.6.1.7.zip \
 	wp-super-cache.1.4.8.zip \
-	wptouch.4.1.zip
+	wptouch.4.1.3.zip
 
 PLUGIN_DIR=	${PREFIX}/www/wordpress/wp-content/plugins
 PLUGINS=	${DISTFILES:C|\.[\.0-9]*zip||}

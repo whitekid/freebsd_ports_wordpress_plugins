@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress-plugins
-PORTVERSION=	20160513
+PORTVERSION=	20160714
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.wordpress.org/plugin/
 DIST_SUBDIR=	wordpress
@@ -37,9 +37,9 @@ DISTFILES= \
 	stats.zip \
 	syntaxhighlighter.zip \
 	toc-for-wordpress.zip \
-	wordfence.6.1.7.zip \
+	wordfence.6.1.10.zip \
 	wp-super-cache.1.4.8.zip \
-	wptouch.4.1.3.zip
+	wptouch.4.1.7.zip
 
 PLUGIN_DIR=	${PREFIX}/www/wordpress/wp-content/plugins
 PLUGINS=	${DISTFILES:C|\.[\.0-9]*zip||}
